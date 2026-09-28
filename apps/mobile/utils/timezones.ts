@@ -24,11 +24,17 @@ const TIMEZONE_ALIASES: Record<string, string> = {
   "Asia/Rangoon": "Asia/Yangon",
   "Atlantic/Faroe": "Atlantic/Faeroe",
   "Atlantic/Faeroe": "Atlantic/Faroe",
+  "Etc/GMT": "UTC",
+  "Etc/UTC": "UTC",
   "Europe/Kyiv": "Europe/Kiev",
   "Europe/Kiev": "Europe/Kyiv",
 };
 
-export const TIMEZONE_OPTIONS: readonly TimezoneOption[] = TIMEZONES.map((id) => {
+const TIMEZONE_IDS: readonly string[] = TIMEZONES.includes("UTC" as never)
+  ? TIMEZONES
+  : [...TIMEZONES, "UTC"];
+
+export const TIMEZONE_OPTIONS: readonly TimezoneOption[] = TIMEZONE_IDS.map((id) => {
   const label = id.replace(/_/g, " ");
   const lowerLabel = label.toLowerCase();
   const city = lowerLabel.split("/").pop() ?? lowerLabel;

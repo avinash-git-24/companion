@@ -124,7 +124,7 @@ export const EditAvailabilityNameScreen = forwardRef<
         <Text className="text-[17px] font-semibold text-black dark:text-white">
           Select Timezone
         </Text>
-        <AppPressable onPress={closeTimezoneModal}>
+        <AppPressable onPress={closeTimezoneModal} accessibilityLabel="Close timezone picker">
           <Ionicons name="close" size={24} color={isDark ? "#FFFFFF" : "#A3A3A3"} />
         </AppPressable>
       </View>
@@ -143,6 +143,7 @@ export const EditAvailabilityNameScreen = forwardRef<
           {timezoneSearch.length > 0 && (
             <TouchableOpacity
               onPress={() => setTimezoneSearch("")}
+              accessibilityLabel="Clear search"
               style={{ position: "absolute", right: 8 }}
               hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
             >

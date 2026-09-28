@@ -257,7 +257,10 @@ export const EditAvailabilityNameScreen = forwardRef<
             <Text className="text-[17px] font-semibold" style={{ color: theme.text }}>
               Select Timezone
             </Text>
-            <TouchableOpacity onPress={closeTimezoneModal}>
+            <TouchableOpacity
+              onPress={closeTimezoneModal}
+              accessibilityLabel="Close timezone picker"
+            >
               <Ionicons name="close" size={24} color={theme.textMuted} />
             </TouchableOpacity>
           </View>
