@@ -28,6 +28,7 @@ const TIMEZONE_ALIASES: Record<string, string> = {
   "Etc/UTC": "UTC",
   "Europe/Kyiv": "Europe/Kiev",
   "Europe/Kiev": "Europe/Kyiv",
+  UTC: "Etc/UTC Etc/GMT",
 };
 
 const TIMEZONE_IDS: readonly string[] = TIMEZONES.includes("UTC" as never)

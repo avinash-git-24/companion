@@ -17,6 +17,8 @@ describe("filterTimezones", () => {
 
     expect(filterTimezones("kyiv")[0]?.id).toBe("Europe/Kiev");
     expect(filterTimezones("calcutta")[0]?.id).toBe("Asia/Kolkata");
+    expect(filterTimezones("Etc/UTC")[0]?.id).toBe("UTC");
+    expect(filterTimezones("Etc/GMT")[0]?.id).toBe("UTC");
   });
 
   test("does not duplicate when selected and device timezones are the same", () => {

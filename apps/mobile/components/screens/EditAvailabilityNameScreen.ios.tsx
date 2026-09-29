@@ -260,6 +260,7 @@ export const EditAvailabilityNameScreen = forwardRef<
             <TouchableOpacity
               onPress={closeTimezoneModal}
               accessibilityLabel="Close timezone picker"
+              accessibilityRole="button"
             >
               <Ionicons name="close" size={24} color={theme.textMuted} />
             </TouchableOpacity>
